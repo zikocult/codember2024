@@ -1,11 +1,10 @@
 #include "./mylibft/include/get_next_line.h"
-#include <stdio.h>
+#include "./mylibft/include/ft_printf.h"
 #include <stdbool.h>
 #include <fcntl.h>
-#include <sys/types.h>
 #include <unistd.h>
 
-bool comprobación(char *gnl)
+static bool validation(char *gnl)
 {
 	int i = 0;
 	char value = gnl[i];
@@ -24,7 +23,6 @@ bool comprobación(char *gnl)
 		i++;
 		}
 	}
-
 	return (true);
 }
 
@@ -38,18 +36,18 @@ int main(void)
 	fd1 = open(file1, O_RDONLY);
 	if (fd1 == -1)
 	{
-		printf("Fail al abrir el fichero\n");
+		ft_printf("Fail al abrir el fichero\n");
 		return (1);
 	}
 	gnl = get_next_line(fd1);
 	while (gnl) {
-		if (comprobación(gnl))
+		if (validation(gnl))
 			acierto++;
 		free(gnl);
 		gnl = get_next_line(fd1);
 		total++;
 	}
 	close(fd1);
-	printf("submit %dtrue%dfalse\n", acierto, total - acierto);
-	return EXIT_SUCCESS;
+	ft_printf("submit %dtrue%dfalse\n", acierto, total - acierto);
+	return (0);
 }
