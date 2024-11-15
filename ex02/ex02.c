@@ -50,9 +50,6 @@ int main(void)
 		total++;
 	}
 	close(fd1);
-	printf("El número de aciertos es = %d\n", acierto);
-	printf("El número de fallos ha sido = %d\n", total - acierto);
-	printf("El número total es = %d\n", total);
 	printf("submit %dtrue%dfalse\n", acierto, total - acierto);
 	return EXIT_SUCCESS;
 }
