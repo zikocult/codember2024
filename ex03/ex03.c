@@ -35,7 +35,7 @@ int ft_evade(char *gnl)
 
 int main (void)
 {
-	int total = 0;
+	int total = 0, last = 0;
 	char *gnl;
 	ssize_t fd1;
 	char file1[1024] = "./trace.txt";
@@ -48,11 +48,12 @@ int main (void)
 	}
 	gnl = get_next_line(fd1);
 	while (gnl) {
-		total = total + ft_evade(gnl);
+		last = ft_evade(gnl);
+		total = total + last;
 		free(gnl);
 		gnl = get_next_line(fd1);
 	}
-	ft_printf("submit %d-15\n", total);
+	ft_printf("submit %d-%d\n", total, last);
 	close (fd1);
 	return (0);
 }
