@@ -31,7 +31,7 @@ int main(void)
 	int acierto = 0, total = 0;
 	char *gnl;
 	ssize_t fd1;
-	char file1[1024] = "./proba.txt";
+	char file1[50] = "./proba.txt";
 
 	fd1 = open(file1, O_RDONLY);
 	if (fd1 == -1)

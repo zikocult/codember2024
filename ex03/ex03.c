@@ -38,7 +38,7 @@ int main (void)
 	int total = 0, last = 0;
 	char *gnl;
 	ssize_t fd1;
-	char file1[1024] = "./trace.txt";
+	char file1[50] = "./trace.txt";
 
 	fd1 = open(file1, O_RDONLY);
 	if (fd1 == -1)
