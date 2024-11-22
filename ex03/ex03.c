@@ -1,6 +1,6 @@
-#include "./mylibft/include/libft.h"
-#include "./mylibft/include/get_next_line.h"
-#include "./mylibft/include/ft_printf.h"
+#include "../mylibft/include/libft.h"
+#include "../mylibft/include/get_next_line.h"
+#include "../mylibft/include/ft_printf.h"
 #include <fcntl.h>
 #include <unistd.h>
 
